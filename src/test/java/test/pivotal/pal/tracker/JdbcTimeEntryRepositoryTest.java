@@ -1,6 +1,5 @@
 package test.pivotal.pal.tracker;
 
-
 import com.mysql.cj.jdbc.MysqlDataSource;
 import io.pivotal.pal.tracker.JdbcTimeEntryRepository;
 import io.pivotal.pal.tracker.TimeEntry;

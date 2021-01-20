@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
+import javax.sql.DataSource;
 import java.beans.BeanProperty;
 
 @SpringBootApplication
@@ -14,8 +15,8 @@ public class PalTrackerApplication {
         SpringApplication.run(PalTrackerApplication.class, args);
     }
 
-    //@Bean
-    //public RestTemplate restTemplate() {
-    //    return new RestTemplate();
-    //}
+    @Bean
+    public TimeEntryRepository timeEntryRepository(DataSource dataSource) {
+        return new JdbcTimeEntryRepository(dataSource);
+    }
 }
